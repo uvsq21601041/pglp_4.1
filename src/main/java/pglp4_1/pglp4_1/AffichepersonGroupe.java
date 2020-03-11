@@ -1,32 +1,39 @@
 package pglp4_1.pglp4_1;
+
+import java.util.ArrayList;
+import java.util.List;
+
 interface Iterator {
+	
     boolean hasNext();
-    Object  next();
+    Personnel  next();
+    void add(Personnel obj);
+    
 }
 public class AffichepersonGroupe implements Iterator{
+	private List<Personnel> list = new ArrayList<Personnel>();
+	private int cursor = 0;
 	
-	Person person;
-	List<String> list;
-	int index=0;
-	int length=0;
-	
-	public TvIterator(Tv tv){
-		this.tv=tv;
-		this.list=tv.getChannels();
-		length=list.size();
+	public void add(Personnel p) {
+        list.add(p);
+    }
+	public AffichepersonGroupe(List<Personnel> list){
+		this.list=list;
+		
+		
 	}
 	
-	public Object next(){
-		return list.get(index++);
-	}
-	public boolean hasNext(){
-		if(index>=length){
-			return false;
-		}
-		else{
-			return true;
-		}
-	}
+	public Personnel next() {
+        Personnel p = null;
+        if(this.hasNext()) {
+            p = this.list.get(cursor++);
+        }
+        return p;
+    }
+
+	 public boolean hasNext() {
+	        return cursor != list.size();
+	    }
 
 
 }

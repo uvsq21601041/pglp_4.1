@@ -16,6 +16,10 @@ public class CompositePersonnel implements Person{
 		public void remove(Personnel personnel) {
 			people.remove(personnel);
 		}
+		public List<Personnel> getPersonnel(){
+			return people;
+		}
+
 		
 	
 
