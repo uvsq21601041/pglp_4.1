@@ -9,27 +9,7 @@ interface Person{
 	public void print();
 	
 }
-interface MyIterator<E> {
 
-    boolean hasNext();
-    
-    
-    E next();
-    
-    
-    void remove();
-
-}
-interface MyCollection<E> {
-    
-    boolean add(E e);
-
-
-    boolean remove(Object o);
-
-  
-    MyIterator iterator();
-}
 public final class Personnel implements Person{
     private final String nom;
     private final String prenom;
