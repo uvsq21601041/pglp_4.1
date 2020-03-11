@@ -2,7 +2,6 @@ package pglp4_1.pglp4_1;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 
 interface Person{
@@ -19,11 +18,11 @@ public final class Personnel implements Person{
     
     
     public static class Builder{
-    	private final String nom;
-        private final String prenom;
-        private final String fonction;
-        private final LocalDate  Datenaissance;
-        private final ArrayList<Integer> telephone;
+    	private String nom;
+        private  String prenom;
+        private  String fonction;
+        private  LocalDate  Datenaissance;
+        private  ArrayList<Integer> telephone;
         
         public Builder(String nom,String prenom,String fonction,LocalDate Datenaissance,ArrayList<Integer> telephone) {
         	this.nom=nom;
@@ -32,6 +31,10 @@ public final class Personnel implements Person{
         	this.Datenaissance=Datenaissance;
         	this.telephone=telephone;
         	
+        }
+        public Builder setnom(String name) {
+        nom = name;
+        return this;
         }
     	public Personnel build() {
     		return new Personnel(this);

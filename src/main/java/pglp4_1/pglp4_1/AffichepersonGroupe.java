@@ -3,14 +3,15 @@ package pglp4_1.pglp4_1;
 import java.util.ArrayList;
 import java.util.List;
 
-interface Iterator {
+interface Iterator<Peronnel> {
 	
     boolean hasNext();
     Personnel  next();
     void add(Personnel obj);
+	Iterator<Personnel> iterator();
     
 }
-public class AffichepersonGroupe implements Iterator{
+public class AffichepersonGroupe implements Iterator<Personnel>{
 	private List<Personnel> list = new ArrayList<Personnel>();
 	private int cursor = 0;
 	
@@ -33,6 +34,9 @@ public class AffichepersonGroupe implements Iterator{
 
 	 public boolean hasNext() {
 	        return cursor != list.size();
+	    }
+	 public Iterator<Personnel> iterator() {
+	        return new AffichepersonGroupe(list);
 	    }
 
 
