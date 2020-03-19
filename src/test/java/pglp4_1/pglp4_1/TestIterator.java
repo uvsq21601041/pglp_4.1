@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
+import pglp4_1.pglp4_1.Personnel.Builder;
+
 
 
 public class TestIterator {
@@ -18,7 +20,7 @@ public class TestIterator {
 		list.add(i);
 		list.add(i);
 	}
-	Personnel a =new Personnel.Builder("aaa", "bbb","ccc", l,list);
+	Builder a =new Personnel.Builder("aaa", "bbb","ccc", l,list);
 	p.add(a);
 	
     Iterator<Personnel> i = p.iterator();

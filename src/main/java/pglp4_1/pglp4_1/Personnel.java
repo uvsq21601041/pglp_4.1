@@ -36,6 +36,7 @@ public final class Personnel implements Person{
         nom = name;
         return this;
         }
+        
     	public Personnel build() {
     		return new Personnel(this);
     	}
