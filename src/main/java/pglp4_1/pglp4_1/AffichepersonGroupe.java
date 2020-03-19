@@ -3,12 +3,15 @@ package pglp4_1.pglp4_1;
 import java.util.ArrayList;
 import java.util.List;
 
+import pglp4_1.pglp4_1.Personnel.Builder;
+
 interface Iterator<Peronnel> {
 	
     boolean hasNext();
     Personnel  next();
-    void add(Personnel obj);
+    void add(Builder a);
 	Iterator<Personnel> iterator();
+	 
     
 }
 public class AffichepersonGroupe implements Iterator<Personnel>{
@@ -38,6 +41,11 @@ public class AffichepersonGroupe implements Iterator<Personnel>{
 	 public Iterator<Personnel> iterator() {
 	        return new AffichepersonGroupe(list);
 	    }
+	@Override
+	public void add(Builder a) {
+		// TODO Auto-generated method stub
+		
+	}
 
 
 }
